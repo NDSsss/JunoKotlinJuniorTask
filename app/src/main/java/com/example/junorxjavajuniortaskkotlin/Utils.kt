@@ -1,24 +1,9 @@
 package com.example.junorxjavajuniortaskkotlin
 
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.TextView
-import java.util.regex.Pattern
 
-fun getSumFromText(text: String): String = Pattern.compile("[0-9-]+\\.?[0-9]*").toRegex().findAll(text)
-    .map { it.value.toDoubleOrNull() ?: 0.0 }
-    .filter { it != 0.0 }
-    .sumByDouble { ddd -> ddd }
-    .toString()
+//TODO: Добавить функцию, которая будет находить в тексте все числа и возвращать их сумму
+// Например если в функцию передать "2fsdfsddfs2cffd" Функция должна вернуть 4
 
-inline fun TextView.writeSumToTv(answer: TextView, crossinline getSum: (String) -> String) {
-    this.addTextChangedListener(object : TextWatcher {
-        override fun afterTextChanged(p0: Editable?) {
-            answer.setText(getSum(p0.toString()))
-        }
+fun getSumFromText(text: String): String = ""
 
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-    })
-}
+//TODO: Добавить extension
